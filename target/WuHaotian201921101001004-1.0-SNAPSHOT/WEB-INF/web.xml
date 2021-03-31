@@ -17,9 +17,13 @@
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>wuhaotian.week3.RegisterServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>JDBCdemoServlet</servlet-name>
+        <servlet-class>com.Wuhaotian.week4.demo.JDBCDemoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
-        <servlet-name>Wuhaotian</servlet-name>
-        <url-pattern>/hello</url-pattern>
+        <servlet-name>JDBCDemoServlet</servlet-name>
+        <url-pattern>/jdbc</url-pattern>
     </servlet-mapping>
     <!-- x=5,a=x so we can say a=5
     so /hello=com.Wuhaotian.week2.demo.HelloWorldServlet
