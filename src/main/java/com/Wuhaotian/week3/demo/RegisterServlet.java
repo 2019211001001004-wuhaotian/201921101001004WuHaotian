@@ -9,17 +9,13 @@ import java.io.PrintWriter;
 public class RegisterServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
     }
-
-
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //request come here-<from method=post>
         //get parameter from request
-        String username = request.getParameter("username") ;//nameof input type-<input type="text" name="text" />
+        //week3 code
+       /* String username = request.getParameter("username") ;//nameof input type-<input type="text" name="text" />
         String password = request.getParameter("password") ;//<input type="password" name="password" />
         String email = request.getParameter("email") ;//<input type="text" name="email" />
         String gender =request.getParameter("gender");//<input type="radio" name="gender">
@@ -32,7 +28,6 @@ public class RegisterServlet extends HttpServlet {
         writer.println("<br> email :"+email);
         writer.println("<br> gender :"+gender);
         writer.println("<br> birthday :"+birthday);
-        writer.close();
-
+        writer.close();*/
     }
 }

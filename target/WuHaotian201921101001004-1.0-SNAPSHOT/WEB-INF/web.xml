@@ -3,34 +3,57 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    <!--add code about servlet-->
-    <servlet>
-        <servlet-name>Wuhaotian</servlet-name><!--give any name-->
-        <servlet-class>com.Wuhaotian.week2.demo.HelloWorldServlet</servlet-class><!--name of servlet class-->
+   <servlet>
+        <servlet-name>Wuhaotian</servlet-name>
+        <servlet-class>com.Wuhaotian.week2.demo.HelloWorldServlet</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>Wuhaotian</servlet-name>
+        <url-pattern>/wuhaotian</url-pattern>
+    </servlet-mapping>
     <servlet>
         <servlet-name>LifeCycleServlet</servlet-name>
-        <servlet-class>wuhaotian.week3.LifeCycleServlet</servlet-class>
+        <servlet-class>com.Wuhaotian.week3.demo.LifeCycleServlet</servlet-class>
     </servlet>
-    <!--automatic code-->
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>wuhaotian.week3.RegisterServlet</servlet-class>
+        <servlet-class>com.Wuhaotian.week3.demo.RegisterServlet</servlet-class>
     </servlet>
-    <servlet>
+    <!--<servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.Wuhaotian.week5.demo.LoginServlet</servlet-class>
+    </servlet>-->
+
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <!---<servlet>
         <servlet-name>JDBCdemoServlet</servlet-name>
         <servlet-class>com.Wuhaotian.week4.demo.JDBCDemoServlet</servlet-class>
+        <init-param>
+            <param-name>driver</param-name>
+            <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
+        </init-param>
+        <init-param>
+            <param-name>url</param-name>
+            <param-value>jdbc:sqlserver://localhost;databaseName=userdb;</param-value>
+        </init-param>
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>sa</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>123456  </param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
-        <servlet-name>JDBCDemoServlet</servlet-name>
+        <servlet-name> JDBCdemoServlet</servlet-name>
         <url-pattern>/jdbc</url-pattern>
-    </servlet-mapping>
-    <!-- x=5,a=x so we can say a=5
-    so /hello=com.Wuhaotian.week2.demo.HelloWorldServlet
-    -->
+    </servlet-mapping>-->
     <servlet-mapping>
         <servlet-name>LifeCycleServlet</servlet-name>
-        <url-pattern>/register</url-pattern><!--write this url in action-->
-        <!--/Life == LifeCycleServlet==com.Wuhaotian.week3.demo.LifeCycleServlet-->
+        <url-pattern>/life</url-pattern>
     </servlet-mapping>
 </web-app>

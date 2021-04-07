@@ -52,7 +52,7 @@ public class JDBCDemoServlet extends HttpServlet {
         System.out.println("i am in doGet()");//ok
         String str="select * from usertable";
         try {
-            ResultSet rs=con.createStatement().executeQuery();
+            ResultSet rs=con.createStatement().executeQuery(str);
             while(rs.next()){
 
             }
