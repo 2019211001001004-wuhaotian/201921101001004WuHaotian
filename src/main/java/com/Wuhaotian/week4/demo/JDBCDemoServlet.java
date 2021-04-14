@@ -11,7 +11,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-@WebServlet(
+/*@WebServlet(
         urlPatterns = {"/jdbc"},
         initParams = {
                 @WebInitParam(name="driver",value ="com.microsoft.sqlserver.jdbc.SQLServerDriver"),
@@ -19,10 +19,9 @@ import java.sql.SQLException;
                 @WebInitParam(name="username",value ="sa"),
                 @WebInitParam(name="password",value ="123456"),
         },loadOnStartup = 1
-)
+)*/
 public class JDBCDemoServlet extends HttpServlet {
     Connection con=null;
-
     @Override
     public void init() throws ServletException{
 
