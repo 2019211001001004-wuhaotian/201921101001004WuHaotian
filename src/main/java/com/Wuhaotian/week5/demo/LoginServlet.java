@@ -1,5 +1,8 @@
 package com.Wuhaotian.week5.demo;
 
+import com.Wuhaotian.dao.UserDao;
+import com.Wuhaotian.model.User;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -7,7 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 
-@WebServlet(name="LoginServlet",value = "/loginServlet")
+@WebServlet(name="LoginServlet",value = "/login")
 public class LoginServlet extends HttpServlet {
     Connection con=null;
     @Override
@@ -27,13 +30,29 @@ public class LoginServlet extends HttpServlet {
         con = (Connection) getServletContext().getAttribute("con");
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username =  request.getParameter("username");
         String password = request.getParameter("password");
+
+        UserDao userDao=new UserDao();
+        try {
+            User user=userDao.findByUsernamePassword(con,username,password);
+            if(user!=null) {
+                request.setAttribute("user",user);
+                request.getRequestDispatcher("WEB-INF/views/userInfo.jsp").forward(request,response);
+            }else{
+                request.setAttribute("message","Username or Password Error!!!");
+                request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
         System.out.println(username+password);
         try {
             String sql = "SELECT * FROM usertable WHERE username=? and password=?";
