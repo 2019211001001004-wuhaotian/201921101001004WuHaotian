@@ -76,6 +76,8 @@ public  class UserDao implements  IUserDao{
         //select --- where username=?and password=?---
         String sql = "SELECT * FROM usertable WHERE username=? and password=?";
         PreparedStatement st=con.prepareStatement(sql);
+        st.setString(1,username);
+        st.setString(2,password);
         ResultSet rs=st.executeQuery();
         User user=null;
         if(rs.next()) {
