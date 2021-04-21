@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
             User user=userDao.findByUsernamePassword(con,username,password);
             if(user!=null) {
                 request.setAttribute("user",user);
-                request.getRequestDispatcher("WEB-INF/views/userInfo.jsp").forward(request,response);
+                request.getRequestDispatcher("WEB-INF/views/userinfo.jsp").forward(request,response);
             }else{
                 request.setAttribute("message","Username or Password Error!!!");
                 request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
