@@ -44,10 +44,7 @@
         <servlet-name>JDBCdemoServlet</servlet-name>
         <servlet-class>com.Wuhaotian.week4.demo.JDBCDemoServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>SearchServlet</servlet-name>
-        <servlet-class>com.Wuhaotian.week6.demo.SearchServlet</servlet-class>
-    </servlet>
+
     <servlet-mapping>
         <servlet-name> JDBCdemoServlet</servlet-name>
         <url-pattern>/jdbc</url-pattern>

@@ -9,28 +9,37 @@
 <%@include file="header.jsp"%>
 <h1>User Info</h1>
 <%
-    User user(User)request.getAttribute("user");
+    //Cookie [] allCookies=request.getCookies();
+    //for(Cookie c:allCookies){
+          //out.println("<br/>"+c.getName()+" --- "+c.getValue());
+    User u=(User) session.getAttribute("user");
+%>
+<%
+    //User user=(User)request.getAttribute("user");
 %>
 <table>
-    <tr>
-        <td>Id:</td><td><%=request.getAttribute("Id")%></td>
-    </tr>
-    <tr>
-        <td>Username:</td><td><%=user.getUsername()%></td>
-    </tr>
-    <tr>
-        <td>password:</td><td><%=user.getPassword()%></td>
-    </tr>
-    <tr>
-        <td>Email:</td><td><%=user.getEmail()%></td>
-    </tr>
-    <tr>
-        <td>Gender:</td><td><%=user.getGender()%></td>
-    </tr>
-    <tr>
-        <td>Birthdate:</td><td><%=user.getBirthdate()%></td>
-    </tr>
 
+    <tr>
+        <td>Id:</td><td><%=u.getId()%></td>
+    </tr>
+    <tr>
+        <td>Username:</td><td><%=u.getUsername()%></td>
+    </tr>
+    <tr>
+        <td>password:</td><td><%=u.getPassword()%></td>
+    </tr>
+    <tr>
+        <td>Email:</td><td><%=u.getEmail()%></td>
+    </tr>
+    <tr>
+        <td>Gender:</td><td><%=u.getGender()%></td>
+    </tr>
+    <tr>
+        <td>Birthdate:</td><td><%=u.getBirthdate()%></td>
+    </tr>
+    <tr>
+        <td><a href="UpdateUser">Update</a></td>
+    </tr>
 
 </table>
 
