@@ -34,7 +34,8 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-doPost(request,response);
+        request.getRequestDispatcher("WEB-INF/views/register.jsp").forward(request,response);
+        //doPost(request,response);
     }
 
     @Override
@@ -66,6 +67,7 @@ doPost(request,response);
             ps.setString(4,gender);
             ps.setString(5,birthdate);
             ps.executeUpdate();
+        //response.sendRedirect("login");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -90,9 +92,9 @@ doPost(request,response);
 
 
         // request.getRequestDispatcher("userList.jsp").forward(request,response);//
-        //url doesnot change
+        //url does not change
         //System.out.println("i am in RegisterServlet-->doPost()-->after forward()");
-        response.sendRedirect("login.jsp");
+        request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
             /*print-write into response
         PrintWriter writer = response.getWriter();
         writer.println("<br> username :"+username);
