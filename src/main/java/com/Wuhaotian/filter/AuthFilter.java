@@ -7,6 +7,7 @@ import java.io.IOException;
 @WebFilter(filterName = "AuthFilter")
 public class AuthFilter implements Filter {
     public void init(FilterConfig config) throws ServletException {
+
     }
 
     public void destroy() {
