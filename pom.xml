@@ -5,10 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>WuHaotian201921101001004</artifactId>
+    <artifactId>WuHaotian2019211001001004</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>201921101001004WuHaotian</name>
+    <name>2019211001001004-WuHaotian</name>
     <packaging>war</packaging>
+
 
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -40,6 +41,21 @@
             <artifactId>mssql-jdbc</artifactId>
             <version>8.2.1.jre8</version>
         </dependency>
+
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.0</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
