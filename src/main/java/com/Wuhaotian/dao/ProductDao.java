@@ -56,12 +56,15 @@ public class ProductDao implements  IProductDao{
 
     @Override
     public Product findById(Integer productId, Connection con) throws SQLException {
-        String sql="select * from Product where ProductId=?";
-        PreparedStatement pstmt= con.prepareStatement(sql);
-        pstmt.setInt(1,productId);
-        ResultSet rs= pstmt.executeQuery();
+        String sql = "select * from Product where ProductId = ?";
+        PreparedStatement pt=con.prepareStatement(sql);
+        pt.setInt(1,productId);
+        System.out.println("45678978");
+        pt.setInt(1, productId);
+        ResultSet rs=pt.executeQuery();
         Product product=null;
-        if(rs.next()){
+        while(rs.next()){
+            System.out.println("456789");
             product=new Product();
             product.setProductId(rs.getInt("ProductId"));
             product.setProductName(rs.getString("ProductName"));
@@ -69,6 +72,7 @@ public class ProductDao implements  IProductDao{
             product.setPicture(rs.getBinaryStream("picture"));
             product.setPrice(rs.getDouble("price"));
             product.setCategoryId(rs.getInt("CategoryId"));
+
         }
         return product;
     }
