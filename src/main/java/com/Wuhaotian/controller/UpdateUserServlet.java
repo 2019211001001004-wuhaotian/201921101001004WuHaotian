@@ -46,7 +46,7 @@ public class UpdateUserServlet extends HttpServlet {
         user.setPassword(password);
         user.setEmail(email);
         user.setGender(gender);
-        user.setBirthDate(birthdate);
+        user.setBirthdate(birthdate);
         UserDao User=new UserDao();
         try {
             User.updateUser(con,user);
